@@ -48,8 +48,8 @@ namespace class_creator {
 		cout << "Create source..." << endl;
 
 		if (!directory::exist((this->project_directory + SOURCE_DIR).toStdString())) {
-			cerr << "Error: " << (this->project_directory + SOURCE_DIR).toStdString() << " does not exist" << endl;
-			return false;
+			cout << "Warning: " << (this->project_directory + SOURCE_DIR).toStdString() << " does not exist. I will handle that" << endl;
+			if (!directory::create((this->project_directory + SOURCE_DIR).toStdString())) return false;
 		}
 
 		QString source_file_path = this->project_directory + SOURCE_DIR + this->source_file_name;
@@ -80,8 +80,8 @@ namespace class_creator {
 		cout << "Create header..." << endl;
 
 		if (!directory::exist((this->project_directory + HEADER_DIR).toStdString())) {
-			cerr << "Error: " << (this->project_directory + HEADER_DIR).toStdString() << " does not exist" << endl;
-			return false;
+			cout << "Warning: " << (this->project_directory + HEADER_DIR).toStdString() << " does not exist. I will handle that" << endl;
+			if (!directory::create((this->project_directory + HEADER_DIR).toStdString())) return false;
 		}
 
 		QString header_file_path = this->project_directory + HEADER_DIR + this->header_file_name;
