@@ -4,9 +4,9 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	cout << "**********************\n";
-	cout << "*   CLASS CREATOR    *\n";
-	cout << "**********************\n" << endl;
+	cout << "***********************\n";
+	cout << "*    CLASS CREATOR    *\n";
+	cout << "***********************\n" << endl;
 
 	if (argc == 2) { // 1 argument
 		QString class_name = argv[1];

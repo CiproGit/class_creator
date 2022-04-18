@@ -10,7 +10,6 @@
 #include "windows_os.h"
 #endif
 
-#include <iostream>
 #include <QFile>
 #include <QTextStream>
 
