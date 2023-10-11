@@ -55,8 +55,8 @@ int main(int argc, char *argv[]) {
 	}
 	else {
 		cerr << "Error: I need 1 or 2 arguments\n";
-		cerr << "Usage: class_creator.exe [class name]\n";
-		cerr << "Usage: class_creator.exe [class name] [project directory]" << endl;
+		cerr << "Usage: class_creator [class name]\n";
+		cerr << "Usage: class_creator [class name] [project directory]" << endl;
 		return EXIT_FAILURE;
 	}
 
