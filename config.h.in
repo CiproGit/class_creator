@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define VERSION_MAJOR @class_creator_VERSION_MAJOR@
+#define VERSION_MINOR @class_creator_VERSION_MINOR@
+#define VERSION_PATCH @class_creator_VERSION_PATCH@
+
+#endif // CONFIG_H

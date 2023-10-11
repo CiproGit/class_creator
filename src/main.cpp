@@ -1,12 +1,31 @@
 #include "class_creator.h"
+#include "config.h"
 #include <iostream>
 
 using namespace std;
 
+void print_about() {
+	string version_string = to_string(VERSION_MAJOR) + "." + to_string(VERSION_MINOR) + "." + to_string(VERSION_PATCH);
+
+	cout << "******************************\n";
+	cout << "    CLASS CREATOR\n";
+	cout << "    Version " + version_string + "\n";
+	cout << "    Developed by\n";
+	cout << "    Federico Cipressi\n";
+	cout << "******************************\n" << endl;
+}
+
+QString sanitize(string input) {
+	if (input.back() == '\"') { // The last character of the input string is "
+		input = input.substr(0, input.size() - 1); // Remove the last character
+	}
+
+	replace(input.begin(), input.end(), '\\', '/'); // Replace backslash with forward slash
+	return QString::fromStdString(input);
+}
+
 int main(int argc, char *argv[]) {
-	cout << "***********************\n";
-	cout << "*    CLASS CREATOR    *\n";
-	cout << "***********************\n" << endl;
+	print_about();
 
 	if (argc == 2) { // 1 argument
 		QString class_name = argv[1];
@@ -27,7 +46,7 @@ int main(int argc, char *argv[]) {
 			class_name.replace(0, 1, class_name.at(0).toUpper()); // Capitalize first character
 		}
 
-		QString project_directory = argv[2];
+		QString project_directory = sanitize(argv[2]);
 
 		class_creator::Class_creator class_creator(class_name, project_directory);
 		class_creator.print_data();
