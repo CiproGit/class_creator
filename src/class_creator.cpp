@@ -34,7 +34,7 @@ namespace class_creator {
 		this->header_file_name = this->lower_class_name + ".h";
 	}
 
-	Class_creator::~Class_creator() {}
+	Class_creator::~Class_creator() = default;
 
 	void Class_creator::print_data() const {
 		cout << "Project directory: " << this->project_directory.toStdString() << '\n';
