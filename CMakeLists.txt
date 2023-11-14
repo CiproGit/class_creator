@@ -7,7 +7,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON) # Add build directory to include path
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Core REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core)
 
 include_directories(include)
 
@@ -42,4 +42,4 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${WIN32_RESOURCES})
 
 configure_file(config.h.in config.h) # Set config header file
 
-target_link_libraries(class_creator Qt6::Core)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core)
